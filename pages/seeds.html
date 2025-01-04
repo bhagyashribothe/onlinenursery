@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seeds-page</title>
+    <link rel="stylesheet" href="../css/plants.css">
+    <style>
+             * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8f1;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #3a9e67, #2b7a4b);
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 15px;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            position: relative;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            width: 80%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 0;
+            padding: 15px 30px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-img {
+            width: 50px;
+            margin-right: 15px;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .navbar-nav li {
+            position: relative;
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .navbar-nav a:hover {
+            color: #4caf50;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #388e3c;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #4caf50;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                background-color: #388e3c;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 16px 0;
+            }
+
+            .menu-toggle:checked~.navbar-nav {
+                display: flex;
+            }
+
+            .menu-toggle-label {
+                display: flex;
+                cursor: pointer;
+                flex-direction: column;
+            }
+
+            .menu-toggle-label div {
+                width: 25px;
+                height: 3px;
+                background: white;
+                margin: 4px 0;
+            }
+
+            .search-bar {
+                display: flex;
+                margin-top: 20px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .search-bar input {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+
+            .icons {
+                display: none;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+        .seedsowing{
+            width: 100%;
+            height: 390px;
+            margin-bottom: 20px;
+            
+        }
+        .seed2{
+            margin-top: 35px;
+            margin-bottom: 5px;
+            
+        }
+        .titlee{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            color: #1a5d1e;
+            font-size: 41px;
+            margin-top: 5px;
+            margin-left: 30px;
+            margin-bottom: 17px;
+        }
+        .type-containers{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align:center;
+         }
+     
+        .type5{
+            width: 280px;
+            border-style: solid;
+            border-color: #333;
+            border-width: 2px;
+            margin: 5px;
+            border-radius: 200px;
+        }
+        .type2{
+            height: 310px; 
+            width: 264px;
+        }
+      
+        .names{
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: 800;
+            color: #1a5d1e;
+        }
+        .addition{
+            font-size: 20px;
+            color: #1a5d1e;
+        }
+
+        .type5:hover{
+            border: none;
+            box-shadow: 0 0 8px 6px gray;
+            transition: 0.5;
+        }
+        .rupees{
+            color: black;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+        .buy-button{
+            color:black;
+            background-color: #4caf50;
+            font-size: 22px;
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: 700;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .buy-button:hover{
+            border: none;
+            box-shadow: 0 0 8px 6px gray;
+            background-color: aliceblue;
+            transition: 0.5;
+            
+        }
+       .footer {
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+.footer {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.footer-tag{
+    color: white;
+    
+    
+}
+
+.footer .social-icons a:hover {
+    color: red;
+    box-shadow: 0cm;
+}
+.footer {
+    background-color: #3a9e67;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffd700;
+}
+.iconn{
+    height: 47px;
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.iconn:hover{
+    border: none;
+    box-shadow: 0 0 8px 6px gray;
+    background-color: aliceblue;
+    transition: 0.5;
+    height: 70px;
+ 
+}
+
+
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../images/index/logo.jpg" alt="NatureNest Logo"> NatureNest
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+
+            <div class="icons">
+                <a href="./../pages/login.html">
+                    <img src="./../icons/user.png" class="icon icon-img">
+                </a>
+                <a href="./../pages/cart.html">
+                    <img src="./../icons/cart.png" class="icon icon-img">
+                </a>
+            </div>
+
+            <input type="checkbox" class="menu-toggle" id="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle-label">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+
+            <ul class="navbar-nav">
+                <li><a href="./../pages/plants.html">Plants</a>
+                    <div class="dropdown">
+                        <a href="./../pages/indoor.html">Indoor Plants</a>
+                        <a href="./../pages/flower.html">Flowering Plants</a>
+                        <a href="./../pages/fruit.html">Fruit Plants</a>
+                        <a href="./../pages/medicinal.html">Medicinal Plants</a>
+                    </div>
+                </li>
+                <li><a href="./../pages/seeds.html">Seeds</a>
+                    <div class="dropdown">
+                        <a href="./../pages/flowerseed.html">Flower Seeds</a>
+                        <a href="./../pages/vegetable.html">Vegetable Seeds</a>
+                        <a href="./../pages/bulb.html">Flower Bulbs</a>
+                        <a href="./../pages/fruitseed.html">Fruit Seeds</a>
+                        <a href="./../pages/herbseed.html">Herbs Seeds</a>
+                    </div>
+                </li>
+                <li><a href="./../pages/pots_n_planters.html">Pots & Planters</a>
+                </li>
+                <li><a href="./../pages/plantcare.html">Plant Care</a>
+                    <div class="dropdown">
+                        <a href="./../pages/fertilizer.html"> Fertilizer And Potting Mix</a>
+                        <a href="./../pages/garden.html">Gardening Tools</a>
+                        <a href="./../pages/accesories.html">Our Accesories</a>
+                       
+                    </div>
+                </li>   
+                <li><a href="./../pages/gifts.html">Gifts</a></li>
+                <li><a href="./../pages/blogs.html">Blogs</a></li>
+                <li><a href="./../pages/about.html">About Us</a></li>
+                <li><a href="./../pages/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+        <img src="../images/seeds/seedsowing.png" class="seedsowing"/>
+     
+     <div class="titlee">
+        SHOP BY CATEGORIES
+    </div>
+        <div class="type-containers">
+        <a href="flowerseed.html">
+       <div> <img src="../images/seeds/flower.webp"  class="type5"/>
+            <p class="names">Flower-seeds</p>
+       </div>
+       </a>
+        <a href="vegetable.html">
+       <div> <img src="../images/seeds/vegetable.webp" class="type5"/>
+            <p class="names">Vegetable-seeds</p>
+        </div>
+        </a>
+        <a href="bulb.html">
+        <div> <img src="../images/seeds/bulb.webp" class="type5"/>
+            <p class="names"> Flower-Bulb</p>
+        </div>
+        </a>
+        
+        <a href="fruitseed.html">
+       <div> <img src="../images/seeds/fruit.webp" class="type5"/>
+            <p class="names">Fruit-seeds</p>
+        </div>
+        </a>
+        <a href="herbseed.html">
+       <div> <img src="../images/seeds/herbs.webp" class="type5"/>
+         <p class="names">Herb-seeds</p>
+       </div>
+       </a>
+    </div>    
+    <img src="../images/seeds/seedsgift.png" class="seedsowing seed2"/>
+
+    <footer>
+        <h3 class="footer-tag">Connect with us</h3>
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank" class="fab fa-twitter" title="Twitter"><img src="../icons/twitter.png" class="iconn"/></a>
+            <a href="https://instagram.com" target="_blank" class="fab fa-instagram" title="Instagram"><img src="../icons/instaicon.jpg" class="iconn"/></a>
+            <a href="https://wa.me/+918010333840" target="_blank" class="fab fa-whatsapp" title="WhatsApp"><img src="../icons/wpicon.png" class="iconn"/></a>
+           </div>
+    </footer>
+</body>
+</html>

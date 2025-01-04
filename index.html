@@ -1,9 +1,145 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title> Online Nursery</title>
-    </head>
-    <body>
-        <h1>HOME PAGE</h1>
-    </body>
-</html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatureNest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="./images/logo.webp" alt="NatureNest Logo"> NatureNest
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+
+            <div class="icons">
+                <a href="./pages/login.html">
+                    <img src="./icons/user.png" class="icon icon-img">
+                </a>
+                <a href="./pages/orders.html">
+                    <img src="./icons/cart.png" class="icon icon-img">
+                </a>
+            </div>
+
+            <input type="checkbox" class="menu-toggle" id="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle-label">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+
+            <ul class="navbar-nav">
+                <li><a href="./pages/plants.html">Plants</a>
+                    <div class="dropdown">
+                        <a href="./pages/indoor.html">Indoor Plants</a>
+                        <a href="./pages/flower.html">Flowering Plants</a>
+                        <a href="./pages/fruit.html">Fruit Plants</a>
+                        <a href="./pages/medicinal.html">Medicinal Plants</a>
+                    </div>
+                </li>
+                <li><a href="./pages/seeds.html">Seeds</a>
+                    <div class="dropdown">
+                        <a href="./pages/flowerseed.html">Flower Seeds</a>
+                        <a href="./pages/vegetable.html">Vegetable Seeds</a>
+                        <a href="./pages/bulb.html">Flower Bulbs</a>
+                        <a href="./pages/fruitseed.html">Fruit Seeds</a>
+                        <a href="./pages/herbseed.html">Herbs Seeds</a>
+                    </div>
+                </li>
+                <li><a href="./pages/pots_n_planters.html">Pots & Planters</a>
+                </li>
+                <li><a href="./pages/plantcare.html">Plant Care</a>
+                    <div class="dropdown">
+                        <a href="./pages/fertilizer.html"> Fertilizer And Potting Mix</a>
+                        <a href="./pages/garden.html">Gardening Tools</a>
+                        <a href="./pages/accesories.html">Our Accesories</a>
+                       
+                    </div>
+                </li>
+                <li><a href="./pages/gifts.html">Gifts</a></li>
+                <li><a href="./pages/blogs.html">Blogs</a></li>
+                <li><a href="./pages/about.html">About Us</a></li>
+                <li><a href="./pages/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Discover the Best Plants and Gardening Tools</h2>
+        <p>Browse our amazing collection of indoor and outdoor plants, seeds, pots, and more!</p>
+        <button>Explore Now</button>
+    </section>
+
+    <section class="featured-products">
+        <div class="product-card">
+            <img src="./images/index/image1.avif" alt="Product">
+            <h3>Indoor Plants</h3>
+            <p>Beautiful plants for your home<br>or office space</p>
+            <a href="./pages/indoor.html"><button>Shop Now</button></a>
+        </div>
+        <div class="product-card">
+            <img src="./images/index/image3.avif" alt="Product">
+            <h3>Flowering Plants</h3>
+            <p>Bring color and fragrance<br>to your garden</p>
+            <a href="./pages/flower.html"><button>Shop Now</button></a>
+        </div>
+        <div class="product-card">
+            <img src="./images/index/image2.avif" alt="Product">
+            <h3>Pots & Planters</h3>
+            <p>Perfect planters for<br>every plant type</p>
+            <a href="./pages/pots_n_planters.html"><button>Shop Now</button></a>
+        </div>
+        <div class="product-card">
+            <img src="./images/index/image4.avif" alt="Product">
+            <h3>Gift Hampers</h3>
+            <p>Thoughtful and unique<br>gifts for every occasion</p>
+            <a href="./pages/gifts.html"><button>Shop Now</button></a>
+        </div>
+    </section>
+    <section class="bestsellers">
+        <h2 class="section-title">Our Bestsellers</h2>
+        <div class="bestseller-products">
+            <div class="product-card">
+                <img src="./images/index/snake_plant.avif" alt="Bestseller Plant">
+                <h3>Snake Plant</h3>
+                <p>Low-maintenance indoor plant<br>perfect for air purification</p>
+                <a href="./pages/orders.html"><button>Add To Cart</button></a>
+            </div>
+            <div class="product-card">
+                <img src="./images/index/ceramic_pot.avif" alt="Bestseller Pot">
+                <h3>Ceramic Pot</h3>
+                <p>Elegant pots to enhance<br>your plant décor</p>
+                <a href="./pages/orders.html"><button>Add To Cart</button></a>
+            </div>
+            <div class="product-card">
+                <img src="./images/index/herb_seeds.avif" alt="Bestseller Seeds">
+                <h3>Herb Seeds</h3>
+                <p>Grow fresh herbs at home<br>with ease</p>
+                <a href="./pages/orders.html"><button>Add To Cart</button></a>
+            </div>
+            <div class="product-card">
+                <img src="./images/index/green_gift_box.avif" alt="Bestseller Gift">
+                <h3>Green Gift Box</h3>
+                <p>Thoughtful gift for plant lovers<br>and nature enthusiasts</p>
+                <a href="./pages/orders.html"><button>Add To Cart</button></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 class="footer_tag">Connect with us</h3>
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank" class="fab fa-twitter" title="Twitter"></a>
+            <a href="https://instagram.com" target="_blank" class="fab fa-instagram" title="Instagram"></a>
+            <a href="https://wa.me/+918010333840" target="_blank" class="fab fa-whatsapp" title="WhatsApp"></a>
+        </div>
+    </footer>
+
+</body>
+</html> 
